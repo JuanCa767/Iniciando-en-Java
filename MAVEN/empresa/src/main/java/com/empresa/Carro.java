@@ -1,12 +1,11 @@
 package com.empresa;
 
 public class Carro {
-    //atributos
+    //ATRIBUTOS
     private String color;
     private double vel_maxima;
     private String modelo;
     private String placa;
-
 
     public Carro(String color, double vel_maxima, String modelo, String placa) {
         this.color = color;
@@ -16,13 +15,22 @@ public class Carro {
     }
 
     public Carro(String modelo, String placa){
-        this.color = " ";
-        this.vel_maxima = 0.0;
         this.modelo = modelo;
         this.placa = placa;
-
+        this.color = "";
+        this.vel_maxima = 0.0;
     }
-    //getter
+
+    @Override
+    public String toString() {
+        String info = "-----------CARRO-----------\n";
+        info += "Placa: "+placa;
+        info += "\nModelo: "+modelo;
+        info += "\nColor: "+color;
+        info += "\nVelocidad maxima: "+vel_maxima+"\n";
+        return info;
+    }
+
     public String getColor() {
         return color;
     }
@@ -38,7 +46,7 @@ public class Carro {
     public String getPlaca() {
         return placa;
     }
-    //setters
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -51,30 +59,20 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    //acciones
+    //ACCIONES
     public void acelerar(){
-        System.out.println("Acelerando");
-
+        System.out.println("Acelerando...");
     }
 
     public void frenar(){
-        System.out.println("Frenando");
-        
+        System.out.println("Frenando...");
     }
 
-    public void girar_derecha(){
-        System.out.println("Giarar a la derecha");
-        
+    public void girar_dere(){
+        System.out.println("Girando a la derecha");
     }
 
-    public void girar_izquierda(){
-        System.out.println("Giarar a la izquierda");
-        
+    public void girar_izq(){
+        System.out.println("Girar a la izquierda");
     }
-
-    
 }
